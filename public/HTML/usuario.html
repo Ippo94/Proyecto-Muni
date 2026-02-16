@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <header>
+        <h2>Registro de reportes</h2>
+        <p><a id="cerrarSesion" href="">Cerrar sesión</a></p>
+    </header>
+
+    <main>
+        <h3>Bienvenido</h3>
+
+        <h4>Haga su reporte</h4>
+        <div id="reporte">
+            <label for="select">Tipo de reporte</label>
+            <select name="" id="select">
+                <option value="" disabled selected>Seleccione el tipo de reporte</option>
+                <option value="">Reporte vial</option>
+                <option value="">Servicio público</option>
+            </select>
+            
+            <label for="distrito">Ubicación</label>
+            <select name="" id="distrito">
+                <option value="" disabled selected>Seleccione el distrito</option>
+                <option value="">Escazú</option>
+                <option value="">San Antonio</option>
+                <option value="">San Rafael</option>
+            </select>
+            <!--aqui puede entrar la lista de comunidades por 
+            medio de js según lo que seleccione-->
+            <select name="" id="comunidad">
+                <option value="" disabled selected>Seleccione la comunidad</option>
+            </select>
+            
+            <label for="descripcion">Descripción del problema</label>
+            <input id="descripcionProblema" type="text" placeholder="Describa su problema">
+
+            <button id="btnReporte">Reportar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Derechos reservados. ©2026</p>
+    </footer>
+</body>
+    <script type="module" src=""></script>
+</html>
