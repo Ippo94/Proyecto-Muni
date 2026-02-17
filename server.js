@@ -1,23 +1,15 @@
-const express = require('express'); // Llama al servidor de Express 
+const express = require('express');
+const path = require('path');
 
-// Express es el servidor que carga los recursos de la página
-
-// Más adelante sirve para la configuración de la API ->  API es donde guardaremos los datos de la app
-
-const path = require('path'); // Nos sirve para que el js pueda acceder a nuestras carpetas y así encontrar el HTML
-
-const app = express(); // Instacia de Express -> Es como un puente entre todas las funciones de Express para darselas a la variable app
-
-app.use(express.static(path.join(__dirname, 'public'))); // Conector que accede a las carpetas (en este caso public)
+const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'HTML/index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'pages/home.html'));
 });
-// Trae directamente mi HTML
 
-const PORT = 2000; // Es donde va a estar alojado el servidor
+const PORT = 3000;
 
 app.listen(PORT, () => {
-  console.log(`Servidor en el puerto http://localhost:${PORT}`);
+  console.log(`Server is running on port http://localhost:${PORT}`);
 });
-// Información de escucha

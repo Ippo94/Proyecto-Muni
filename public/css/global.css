@@ -1,0 +1,102 @@
+:root {
+    --bg-dark: #0d0d0d;
+    --neon-purple: #bc13fe;
+    --neon-cyan: #01ffff;
+    --text-white: #f0f0f0;
+    --text-gray: #a0a0a0;
+}
+
+/* =========================================
+   2. RESET (Configuración base)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+}
+
+/* =========================================
+   3. NAVEGACIÓN (Donde aplicamos tu visión)
+   ========================================= */
+header {
+    padding: 20px 4% 40px 4%; 
+    background: rgba(20, 20, 20, 0.95); 
+    border-bottom: 2px solid var(--neon-purple);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Logo anclado arriba */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    margin-top: 15px; /* Empuje vertical de los botones hacia abajo */
+}
+
+/* =========================================
+   4. COMPONENTES (Botones)
+   ========================================= */
+.btn-primary {
+    background: transparent;
+    border: 1.5px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 6px 18px; 
+    font-size: 0.8rem; 
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* =========================================
+   5. LOGO Y HERO
+   ========================================= */
+.text-neon {
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    color: var(--text-gray);
+}
