@@ -1,0 +1,64 @@
+/* Reset básico para consistencia */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+
+body { background-color: #f4f4f9; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* Header */
+.main-header {
+    background-color: #003366; /* Azul Institucional */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+
+/* Botones */
+.btn { text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+.btn-outline { border: 1px solid white; color: white; margin-right: 10px; }
+.btn-outline:hover { background-color: white; color: #003366; }
+.btn-primary { background-color: #e6b800; color: #003366; } /* Amarillo contraste */
+.btn-primary:hover { background-color: #cc9900; }
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://source.unsplash.com/random/1200x600?city,street');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.cta-button {
+    display: inline-block;
+    background-color: #e6b800;
+    color: #003366;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Cards */
+.info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+
+footer { text-align: center; padding: 1rem; background-color: #222; color: #ccc; margin-top: auto; }

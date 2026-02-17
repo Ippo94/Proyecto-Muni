@@ -11,7 +11,7 @@ const app = express(); // Instacia de Express -> Es como un puente entre todas l
 app.use(express.static(path.join(__dirname, 'public'))); // Conector que accede a las carpetas (en este caso public)
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'HTML/index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'HTML/home.html'));
 });
 // Trae directamente mi HTML
 

@@ -1,0 +1,75 @@
+/* Estructura Layout */
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; }
+
+.admin-layout {
+    display: flex;
+    height: 100vh; /* Ocupa toda la pantalla */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1a1a2e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header { padding: 20px; background-color: #16213e; text-align: center; }
+.sidebar-nav ul { list-style: none; padding: 0; }
+.sidebar-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #aeb3c0;
+    text-decoration: none;
+    transition: 0.3s;
+    border-left: 4px solid transparent;
+}
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background-color: #16213e;
+    color: white;
+    border-left-color: #0f3460;
+}
+.sidebar-nav i { margin-right: 10px; width: 20px; }
+
+.sidebar-footer { margin-top: auto; padding: 20px; }
+#logoutBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #e94560;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1; /* Toma el espacio restante */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Scroll solo en el contenido si es muy largo */
+}
+
+.top-bar {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.user-info { display: flex; align-items: center; gap: 10px; font-weight: bold; }
+.user-info img { width: 35px; height: 35px; border-radius: 50%; }
+
+.content-area { padding: 30px; }
+
+/* Estilos Genéricos para Tablas (Las usaremos en el JS) */
+table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background-color: #f8f9fa; color: #333; }
+tr:hover { background-color: #f1f1f1; }
+.action-btn { padding: 5px 10px; margin-right: 5px; cursor: pointer; border: none; border-radius: 3px; color: white; }
+.btn-edit { background-color: #f39c12; }
+.btn-delete { background-color: #e74c3c; }
