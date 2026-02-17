@@ -1,38 +1,71 @@
-// URLs Endpoints según db.json
-const URLS = {
-    usuarios: "http://localhost:3000/usuarios",
-    reportes: "http://localhost:3000/reportes",
-    proyectos: "http://localhost:3000/proyectos",
-    servicios: "http://localhost:3000/servicios_publicos",
-    comunidades: "http://localhost:3000/comunidades"
-};
+const BASE_URL = "http://localhost:3000";
 
-/**
- * Función Maestra Fetch: Maneja GET, POST, PUT y DELETE
- */
-async function apiFetch(url, method = 'GET', data = null) {
-    const options = {
-        method,
-        headers: { 'Content-Type': 'application/json' }
-    };
-    if (data) options.body = JSON.stringify(data);
-    
-    const res = await fetch(url, options);
-    if (!res.ok) throw new Error(`Error en la petición: ${res.statusText}`);
-    return await res.json();
+// --- FUNCIONES CORE (Siguiendo tu modelo) ---
+
+async function getData(endpoint) {
+    try {
+        const peticion = await fetch(`${BASE_URL}/${endpoint}`);
+        const respuesta = await peticion.json();
+        return respuesta;
+    } catch (error) {
+        console.error("Error en GET:", error);
+    }
 }
 
-// --- SERVICIOS EXPORTADOS ---
+async function postData(endpoint, obj) {
+    try {
+        const peticion = await fetch(`${BASE_URL}/${endpoint}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(obj)
+        });
+        const respuesta = await peticion.json();
+        return respuesta;
+    } catch (error) {
+        console.error("Error en POST:", error);
+    }
+}
 
-// Auth
-export const registrarUsuario = (user) => apiFetch(URLS.usuarios, 'POST', user);
+// Añadimos estas dos para completar los requerimientos del ejercicio (PUT y DELETE)
+async function updateData(endpoint, id, obj) {
+    try {
+        const peticion = await fetch(`${BASE_URL}/${endpoint}/${id}`, {
+            method: "PATCH", // Usamos PATCH para actualizaciones parciales
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(obj)
+        });
+        const respuesta = await peticion.json();
+        return respuesta;
+    } catch (error) {
+        console.error("Error en PUT:", error);
+    }
+}
+
+async function deleteData(endpoint, id) {
+    try {
+        const peticion = await fetch(`${BASE_URL}/${endpoint}/${id}`, {
+            method: "DELETE"
+        });
+        const respuesta = await peticion.json();
+        return respuesta;
+    } catch (error) {
+        console.error("Error en DELETE:", error);
+    }
+}
+
+// --- LÓGICA DE NEGOCIO (Sincronizada con muni.js) ---
+
+export const registrarUsuario = (user) => postData('usuarios', user);
+
 export const validarUsuario = async (correo, password) => {
-    const users = await apiFetch(`${URLS.usuarios}?correo=${correo}&password=${password}`);
+    const users = await getData(`usuarios?correo=${correo}&password=${password}`);
     return users.length > 0 ? users[0] : null;
 };
 
-// Consultas Generales
-export const obtenerTodo = (tipo) => apiFetch(URLS[tipo]);
-export const crearDato = (tipo, data) => apiFetch(URLS[tipo], 'POST', data);
-export const actualizarDato = (tipo, id, data) => apiFetch(`${URLS[tipo]}/${id}`, 'PATCH', data);
-export const eliminarDato = (tipo, id) => apiFetch(`${URLS[tipo]}/${id}`, 'DELETE');
+// Funciones para los 3 CRUDs del Dashboard
+export const obtenerTodo = (tipo) => getData(tipo);
+export const crearDato = (tipo, data) => postData(tipo, data);
+export const actualizarDato = (tipo, id, data) => updateData(tipo, id, data);
+export const eliminarDato = (tipo, id) => deleteData(tipo, id);
+
+export { getData, postData, updateData, deleteData };
