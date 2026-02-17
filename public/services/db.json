@@ -1,1 +1,9 @@
-{}
+{
+  "usuarios": [],
+  "reportes": [],
+  "proyectos": [],
+  "servicios_publicos": [],
+  "comunidades": [
+    { "id": "1", "nombre": "San Rafael", "distrito": "Escazú" }
+  ]
+}
