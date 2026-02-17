@@ -1,13 +1,23 @@
+css
+/* DASHBOARD TRANSFORMADO A TURQUESA NEÓN */
+
+:root {
+    --n-turquoise: #00f5ff;
+    --n-turquoise-glow: rgba(0, 245, 255, 0.3);
+    --bg-deep: #000000;
+    --bg-card: #080808;
+}
+
 .dashboard-layout {
     display: flex;
     min-height: 100vh;
+    background: var(--bg-deep);
 }
 
-/* Estilos de la Sidebar */
 .sidebar {
     width: 280px;
-    background: #111;
-    border-right: 2px solid var(--neon-purple);
+    background: #050505; /* Negro casi total */
+        border-right: 2px solid var(--n-turquoise); /* Reemplaza Purple */
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
@@ -15,291 +25,90 @@
 
 .admin-label {
     font-size: 0.75rem;
-    color: var(--neon-cyan);
+    color: var(--n-turquoise);
     letter-spacing: 2px;
     margin-bottom: 40px;
+    text-shadow: 0 0 8px var(--n-turquoise-glow);
 }
 
-/* Estilos de la Tabla Administrativa */
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    color: var(--text-white);
-}
-
+/* Tablas Administrativas */
 .admin-table th {
     text-align: left;
     padding: 15px;
-    border-bottom: 2px solid var(--neon-cyan);
-    color: var(--neon-cyan);
+    border-bottom: 2px solid var(--n-turquoise);
+    color: var(--n-turquoise);
     text-transform: uppercase;
     font-size: 0.8rem;
 }
 
 .admin-table td {
     padding: 15px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #1a1a1a;
     font-size: 0.9rem;
-}
-    
-    
-
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex-grow: 1;
+    color: #e0faff;
 }
 
-.nav-item {
-    background: transparent;
-    border: 1px solid transparent;
-    color: var(--text-gray);
-    padding: 15px;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
+/* Navegación y Cards */
 .nav-item.active, .nav-item:hover {
-    color: var(--neon-cyan);
-    border-color: var(--neon-cyan);
-    background: rgba(1, 255, 255, 0.05);
-}
-
-.btn-logout {
-    margin-top: auto;
-    background: transparent;
-    border: 1px solid var(--error-red);
-    color: var(--error-red);
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* Badges de Estado */
-.status-badge {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.status-badge.Activo { 
-    background: var(--neon-cyan); 
-    color: #000; 
-    box-shadow: 0 0 10px var(--neon-cyan); 
-}
-
-.status-badge.Mantenimiento { 
-    background: #f39c12; 
-    color: #000; 
-}
-
-.status-badge.Pendiente { background: #555; color: white; }
-.status-badge.En-Proceso { background: #f39c12; color: black; }
-.status-badge.Resuelto { background: #27ae60; color: white; }
-.status-badge.Activo { background: #01ffff; color: #000; box-shadow: 0 0 10px var(--neon-cyan); }
-.status-badge.Mantenimiento { background: #f39c12; color: #000; }
-
-/* Botones de Acción dentro de la tabla */
-.btn-edit, .btn-delete {
-    padding: 5px 10px;
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-.btn-edit { background: var(--neon-cyan); color: black; }
-.btn-delete { background: var(--error-red); color: white; }
-
-
-/* Área de Contenido */
-.main-content {
-    flex-grow: 1;
-    padding: 40px;
-    background: var(--bg-dark);
-}
-
-.content-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 20px;
-}
-
-.table-responsive {
-    background: var(--card-bg);
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: none; 
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    backdrop-filter: blur(5px);
-}
-
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal-content {
-    width: 95%;
-    max-width: 600px; /* Un poco más ancho para el diseño en fila */
-    padding: 40px;    /* Margen interno profesional */
-    border: 2px solid var(--neon-purple) !important;
-    background: var(--card-bg);
-    box-shadow: 0 0 30px rgba(188, 19, 254, 0.2);
-}
-
-/* Diseño de Etiqueta al lado del Input */
-.form-group-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-.form-group-row label {
-    flex: 0 0 140px; /* Ancho fijo para las etiquetas para que todo alinee */
-    color: var(--neon-cyan);
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-top: 10px;
-}
-
-/* Estilo unificado para Inputs, Selects y Textarea */
-.form-group-row input, 
-.form-group-row select, 
-.form-group-row textarea {
-    flex: 1;
-    background: #000;
-    border: 1px solid #444;
-    color: var(--text-white);
-    padding: 12px 15px;
-    outline: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-}
-
-/* Colores Neón al interactuar */
-.form-group-row input:focus, 
-.form-group-row select:focus, 
-.form-group-row textarea:focus {
-    border-color: var(--neon-purple);
-    box-shadow: 0 0 10px var(--neon-purple);
-}
-
-/* Personalización del Select (Flecha y opciones) */
-.form-group-row select {
-    cursor: pointer;
-    appearance: none; /* Quitamos la flecha nativa fea */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23bc13fe' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 18px;
-}
-
-.form-group-row select option {
-    background: #1a1a1a;
-    color: white;
-}
-
-.form-group-row textarea {
-    height: 100px;
-    resize: none;
-}
-
-.modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    color: var(--n-turquoise);
+    border-color: var(--n-turquoise);
+    background: rgba(0, 245, 255, 0.05);
+    box-shadow: inset 0 0 10px rgba(0, 245, 255, 0.1);
 }
 
 .project-card {
-    background: #151515;
-    border: 1px solid #333;
+    background: var(--bg-card);
+    border: 1px solid #222;
     padding: 20px;
     border-radius: 4px;
     transition: 0.3s;
 }
 
 .project-card:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 15px rgba(1, 255, 255, 0.1);
+    border-color: var(--n-turquoise);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.15);
 }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+/* Modales y Formularios */
+.modal-content {
+    width: 95%;
+    max-width: 600px;
+    padding: 40px;
+    border: 2px solid var(--n-turquoise) !important; /* Reemplaza Purple */
+    background: var(--bg-deep);
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.15);
 }
 
-.budget {
-    color: var(--neon-cyan);
-    font-weight: bold;
+.form-group-row label {
+    flex: 0 0 140px;
+    color: var(--n-turquoise);
+    font-size: 0.9rem;
 }
 
-/* Barra de Progreso Neón */
-.progress-bar-container {
-    background: #000;
-    height: 10px;
-    border-radius: 5px;
-    margin: 15px 0 5px 0;
-    overflow: hidden;
+.form-group-row input:focus, 
+.form-group-row select:focus, 
+.form-group-row textarea:focus {
+    border-color: var(--n-turquoise);
+    box-shadow: 0 0 10px var(--n-turquoise-glow);
 }
 
+/* Barra de Progreso Unificada */
 .progress-fill {
     height: 100%;
-    background: linear-gradient(to right, var(--neon-purple), var(--neon-cyan));
-    box-shadow: 0 0 10px var(--neon-cyan);
+    background: var(--n-turquoise); /* Eliminado el gradiente a Purple */
+    box-shadow: 0 0 15px var(--n-turquoise);
 }
 
-.progress-text {
-    font-size: 0.8rem;
-    color: var(--text-gray);
+/* Botones de Acción */
+.btn-edit { 
+    background: var(--n-turquoise); 
+    color: black; 
+    box-shadow: 0 0 8px var(--n-turquoise-glow);
 }
 
-/* Estilo para el botón de Logout */
+/* El botón de Logout mantiene su semántica de error pero con estilo neón */
 .btn-logout {
-    background: rgba(255, 0, 0, 0.1); /* Un toque rojo sutil de fondo */
-    color: #ff4444; /* Color de texto rojo suave */
+    background: rgba(255, 68, 68, 0.05);
+    color: #ff4444;
     border: 1px solid #ff4444;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    margin-top: auto; /* Lo empuja al final del sidebar */
-    width: 100%;
-}
-
-.btn-logout:hover {
-    background: #ff4444;
-    color: white;
-    box-shadow: 0 0 15px #ff4444; /* Brillo neón rojo */
-    transform: translateY(-2px);
 }

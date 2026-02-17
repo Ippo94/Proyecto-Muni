@@ -1,36 +1,23 @@
+/* CONFIGURACIÓN UNIFICADA: BLACK & TURQUOISE NEON */
+
 :root {
-    --bg-dark: #0d0d0d;
-    --neon-purple: #bc13fe;
-    --neon-cyan: #01ffff;
+    --bg-dark: #000000; /* Negro absoluto según instrucción */
+    --neon-turquoise: #00f5ff;
+    --neon-glow: rgba(0, 245, 255, 0.5);
     --text-white: #f0f0f0;
-    --text-gray: #a0a0a0;
+    --text-gray: #7a8a8a; /* Ajustado para armonizar con turquesa */
 }
 
 /* =========================================
-   2. RESET (Configuración base)
-   ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
-}
-
-/* =========================================
-   3. NAVEGACIÓN (Donde aplicamos tu visión)
+   3. NAVEGACIÓN (Actualizada)
    ========================================= */
 header {
     padding: 20px 4% 40px 4%; 
-    background: rgba(20, 20, 20, 0.95); 
-    border-bottom: 2px solid var(--neon-purple);
+    background: rgba(0, 0, 0, 0.9); /* Fondo negro puro con opacidad */
+    border-bottom: 2px solid var(--neon-turquoise); /* Reemplaza Purple */
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Logo anclado arriba */
+    align-items: flex-start;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -40,7 +27,7 @@ header {
 .nav-links {
     display: flex;
     gap: 40px;
-    margin-top: 15px; /* Empuje vertical de los botones hacia abajo */
+    margin-top: 15px; 
 }
 
 /* =========================================
@@ -48,8 +35,8 @@ header {
    ========================================= */
 .btn-primary {
     background: transparent;
-    border: 1.5px solid var(--neon-cyan);
-    color: var(--neon-cyan);
+    border: 1.5px solid var(--neon-turquoise); /* Cambio a Turquesa */
+    color: var(--neon-turquoise);
     padding: 6px 18px; 
     font-size: 0.8rem; 
     font-weight: bold;
@@ -60,28 +47,20 @@ header {
 }
 
 .btn-primary:hover {
-    background: var(--neon-cyan);
-    color: var(--bg-dark);
-    box-shadow: 0 0 15px var(--neon-cyan);
+    background: var(--neon-turquoise);
+    color: #000; /* Texto negro en hover para contraste */
+    box-shadow: 0 0 20px var(--neon-turquoise);
 }
 
 /* =========================================
    5. LOGO Y HERO
    ========================================= */
 .text-neon {
-    color: var(--neon-purple);
-    text-shadow: 0 0 10px var(--neon-purple);
+    color: var(--neon-turquoise); /* Cambio a Turquesa */
+    text-shadow: 0 0 10px var(--neon-turquoise);
     font-size: 1.6rem;
     text-decoration: none;
     font-weight: bold;
-}
-
-.hero {
-    padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
 .hero h2 {
@@ -89,10 +68,12 @@ header {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
+    /* Gradiente ahora solo en tonos de turquesa/blanco para brillo */
+    background: linear-gradient(to right, #fff, var(--neon-turquoise));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px var(--neon-glow));
 }
 
 .hero p {
