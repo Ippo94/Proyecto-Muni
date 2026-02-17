@@ -1,0 +1,60 @@
+.auth-container {
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form {
+    background: var(--card-bg);
+    padding: 40px;
+    border: 1px solid var(--neon-purple);
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.1);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 4px;
+}
+
+.auth-form h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.auth-form p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input {
+    background: #000;
+    border: 1px solid #333;
+    padding: 12px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(1, 255, 255, 0.2);
+}
+
+.auth-form .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+}
