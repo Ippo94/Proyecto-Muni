@@ -1,3 +1,12 @@
 {
-    "usuarios":[]
+  "usuarios": [
+    {
+      "id": "483f",
+      "nombre": "Adrian",
+      "email": "rossmanr1vera02@gmail.com",
+      "telefono": "64191407",
+      "password": "123456",
+      "rol": "ciudadano"
+    }
+  ]
 }
