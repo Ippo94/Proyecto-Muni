@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo</title>
+    <link rel="stylesheet" href="../STYLE/dashboarAdministrador.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" id="nav-reportes" class="active"><i class="fas fa-clipboard-list"></i> Reportes</a></li>
+                    <li><a href="#" id="nav-proyectos"><i class="fas fa-hard-hat"></i> Proyectos Viales</a></li>
+                    <li><a href="#" id="nav-servicios"><i class="fas fa-broom"></i> Servicios Públicos</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 id="page-title">Gestión de Reportes</h2>
+                <div class="user-info">
+                    <span>Admin Municipal</span>
+                    <img src="https://ui-avatars.com/api/?name=Admin+Muni&background=0D8ABC&color=fff" alt="Avatar">
+                </div>
+            </header>
+
+            <div id="content-area" class="content-area">
+                <p>Cargando datos...</p> 
+            </div>
+        </main>
+    </div>
+    <script type="module" src="../js/dashboardorAdmin.js"></script>
+</body>
+</html>

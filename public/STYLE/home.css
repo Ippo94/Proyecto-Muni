@@ -1,0 +1,155 @@
+/* ============================================================
+   EDICIÓN ESTÉTICA HOME: CYBER-NEON MINIMALIST
+   Autor: Adaptación para Home.html
+   ============================================================ */
+
+/* Importación de fuente tecnológica */
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --home-bg: #050505;
+    --neon-cyan: #00f2ff;
+    --neon-glow: 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+/* 1. Fondo general y fuente tecnológica */
+body {
+    background-color: var(--home-bg) !important;
+    color: var(--neon-cyan) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    margin: 0;
+}
+
+/* 2. Contorno de página con patrón de rejilla (Grid) */
+main {
+    border: 1px solid var(--neon-cyan);
+    margin: 15px;
+    padding: 20px;
+    box-shadow: inset 0 0 15px rgba(0, 242, 255, 0.1);
+    /* Patrón de líneas tecnológicas sutiles de fondo */
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* 3. Estilo para el Header y Logo */
+.main-header {
+    border-bottom: 2px solid var(--neon-cyan);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 242, 255, 0.1);
+}
+
+.logo {
+    text-shadow: var(--neon-glow);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* 4. Sección Hero (Título principal) */
+.hero h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px var(--neon-cyan);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #fff; /* Blanco para legibilidad sobre negro */
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 5. Tarjetas de Información (Info-Cards) */
+.card {
+    background: rgba(0, 242, 255, 0.05) !important;
+    border: 1px solid var(--neon-cyan) !important;
+    border-radius: 0px !important; /* Estilo cuadrado minimalista */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.card h3 {
+    color: var(--neon-cyan);
+    text-shadow: var(--neon-glow);
+    border-bottom: 1px solid var(--neon-cyan);
+    padding-bottom: 10px;
+}
+
+/* 6. Footer (Pie de página) */
+footer {
+    border-top: 1px solid var(--neon-cyan);
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* ============================================================
+   FIN DE EDICIÓN ESTÉTICA HOME
+   ============================================================ */
+   
+/* ============================================================
+   PARÉNTESIS: ESTILO BOTONES NEÓN PARA HOME.CSS
+   ============================================================ */
+
+/* Importación necesaria para mantener la coherencia de fuente */
+@import url('https://fonts.googleapis.com');
+
+/* Variables compartidas para consistencia visual */
+:root {
+    --home-neon: #00f2ff;
+    --home-bg: #050505;
+}
+
+/* Aplicar a todos los botones principales de la Home */
+button, .btn, .button-home {
+    background: transparent !important;
+    color: var(--home-neon) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    border: 2px solid var(--home-neon) !important;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    /* Resplandor suave inicial */
+    box-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+}
+
+/* Efecto Hover: El botón se "enciende" */
+button:hover, .btn:hover, .button-home:hover {
+    background: var(--home-neon) !important;
+    color: var(--home-bg) !important;
+    box-shadow: 0 0 20px var(--home-neon), 0 0 40px rgba(0, 242, 255, 0.4);
+    text-shadow: none;
+}
+
+/* Efecto para enlaces que parecen botones (como el login o registro) */
+a.nav-link-btn {
+    text-decoration: none;
+    color: var(--home-neon);
+    padding: 10px 15px;
+    border: 1px solid var(--home-neon);
+    transition: 0.4s;
+}
+
+a.nav-link-btn:hover {
+    box-shadow: inset 0 0 10px var(--home-neon);
+    text-shadow: 0 0 5px var(--home-neon);
+}
+
+/* ============================================================
+   FIN DEL PARÉNTESIS DE BOTONES
+   ============================================================ */

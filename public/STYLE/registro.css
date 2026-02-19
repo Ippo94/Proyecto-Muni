@@ -1,0 +1,141 @@
+/* ============================================================
+   EDICIÓN ESTÉTICA REGISTRO: CYBER-NEON MINIMALIST
+   ============================================================ */
+
+/* Importación de fuente tecnológica */
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --reg-bg: #050505;
+    --neon-cyan: #00f2ff;
+    --neon-glow: 0 0 12px rgba(0, 242, 255, 0.5);
+}
+
+/* 1. Fondo con rejilla y centrado del formulario */
+body {
+    background-color: var(--reg-bg) !important;
+    color: var(--neon-cyan) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 45px 45px;
+}
+
+/* 2. Contenedor del Registro (Efecto Tarjeta Tech) */
+.form-box {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 2px solid var(--neon-cyan) !important;
+    padding: 30px 40px;
+    box-shadow: var(--neon-glow), inset 0 0 15px rgba(0, 242, 255, 0.1);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden; /* Para la línea de escaneo */
+}
+
+/* 3. Título con animación de pulso */
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-shadow: var(--neon-glow);
+    animation: neonPulse 4s infinite ease-in-out;
+}
+
+/* 4. Inputs y Labels Minimalistas */
+.input-group label {
+    font-size: 0.75rem;
+    margin-bottom: 5px;
+    display: block;
+    opacity: 0.9;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent !important;
+    border: 1px solid var(--neon-cyan) !important;
+    color: var(--neon-cyan) !important;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Brillo al seleccionar el campo */
+.input-group input:focus {
+    box-shadow: 0 0 10px var(--neon-cyan);
+    background: rgba(0, 242, 255, 0.05) !important;
+}
+
+/* 5. Botón de Registro (Mismo estilo que Home y Login) */
+.btn-submit {
+    width: 100%;
+    background: transparent !important;
+    color: var(--neon-cyan) !important;
+    border: 2px solid var(--neon-cyan) !important;
+    padding: 15px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: var(--neon-cyan) !important;
+    color: #000 !important;
+    box-shadow: 0 0 25px var(--neon-cyan);
+}
+
+/* 6. Animaciones y efectos extra */
+@keyframes neonPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Línea de escaneo que baja por el formulario */
+.form-box::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--neon-cyan);
+    box-shadow: var(--neon-glow);
+    opacity: 0.2;
+    animation: scanning 6s linear infinite;
+}
+
+@keyframes scanning {
+    0% { top: -10% }
+    100% { top: 110% }
+}
+
+/* Estilo para el enlace inferior */
+.switch-text, .switch-text a {
+    color: var(--neon-cyan) !important;
+    text-align: center;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.switch-text a:hover {
+    text-shadow: var(--neon-glow);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   FIN DE EDICIÓN ESTÉTICA REGISTRO
+   ============================================================ */

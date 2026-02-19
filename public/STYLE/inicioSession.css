@@ -1,0 +1,163 @@
+/* ============================================================
+   EDICIÓN ESTÉTICA LOGIN: CYBER-NEON MINIMALIST
+   ============================================================ */
+
+/* Importación de fuente tecnológica */
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --login-bg: #050505;
+    --neon-cyan: #00f2ff;
+    --neon-glow: 0 0 12px rgba(0, 242, 255, 0.5);
+}
+
+/* 1. Fondo de pantalla con el patrón de rejilla tech */
+body {
+    background-color: var(--login-bg) !important;
+    color: var(--neon-cyan) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* 2. Contenedor del Login (Caja central) */
+.form-box {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid var(--neon-cyan) !important;
+    padding: 40px;
+    box-shadow: var(--neon-glow), inset 0 0 20px rgba(0, 242, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+/* 3. Título y Etiquetas */
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    text-shadow: var(--neon-glow);
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    color: var(--neon-cyan);
+    opacity: 0.8;
+}
+
+/* 4. Estilo de los Inputs (Campos de texto) */
+.input-group input {
+    width: 100%;
+    background: transparent !important;
+    border: 1px solid var(--neon-cyan) !important;
+    color: var(--neon-cyan) !important;
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    box-shadow: var(--neon-glow);
+    background: rgba(0, 242, 255, 0.05) !important;
+}
+
+/* 5. Botón de Ingreso (Neón Sólido) */
+.btn-submit {
+    width: 100%;
+    background: transparent !important;
+    color: var(--neon-cyan) !important;
+    border: 2px solid var(--neon-cyan) !important;
+    padding: 12px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+    letter-spacing: 2px;
+}
+
+.btn-submit:hover {
+    background: var(--neon-cyan) !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+/* 6. Enlaces y Texto inferior */
+.switch-text, .switch-text a, a[style*="color: #777;"] {
+    color: var(--neon-cyan) !important;
+    text-decoration: none;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* ============================================================
+   FIN DE EDICIÓN ESTÉTICA LOGIN
+   ============================================================ */
+
+   /* ============================================================
+   ADICIÓN DE ANIMACIONES NEÓN - LOGIN
+   ============================================================ */
+
+/* Definición de la animación de parpadeo (la misma del dashboard) */
+@keyframes neonPulse {
+    0% { opacity: 1; filter: drop-shadow(0 0 2px var(--neon-cyan)); }
+    50% { opacity: 0.7; filter: drop-shadow(0 0 10px var(--neon-cyan)); }
+    100% { opacity: 1; filter: drop-shadow(0 0 2px var(--neon-cyan)); }
+}
+
+/* Aplicación de parpadeo al título "Bienvenido de nuevo" */
+.form-box h2 {
+    animation: neonPulse 3s infinite ease-in-out; /* Pulso lento para el título */
+}
+
+/* Aplicación de animación al botón de ingresar */
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+    animation: neonPulse 5s infinite rotate; /* Pulso muy sutil */
+}
+
+/* Efecto extra: Línea de escaneo tecnológica (Opcional, añade magia) */
+.form-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-cyan);
+    box-shadow: var(--neon-glow);
+    animation: scanline 4s linear infinite; /* Animación de línea que baja */
+    opacity: 0.3;
+}
+
+@keyframes scanline {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+/* Ajuste para que los bordes de los inputs brillen al escribir */
+.input-group input:focus {
+    animation: neonPulse 1.5s infinite; /* El campo activo parpadea suavemente */
+}
+
+/* ============================================================
+   FIN DE ANIMACIONES - LISTO PARA REGISTRO
+   ============================================================ */
